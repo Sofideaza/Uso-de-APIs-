@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Anime Search</h1>
+
+        <div class="search-container">
+            <input type="text" id="anime-name" placeholder="Enter anime name">
+
+            <select id="anime-type">
+                <option value="all">All Types</option>
+                <option value="tv">TV</option>
+                <option value="movie">Movie</option>
+                <option value="ova">OVA</option>
+                <option value="special">Special</option>
+            </select>
+             <input type="number" id="anime-limit" placeholder="Límite (1-25)" min="1" max="25" value="10">
+            <button id="search-btn">Buscar</button>
+        </div>
+
+        <div id="loading-state" class="state">
+            <div class="loader"></div>
+            <p>Cargando animes...</p>
+        </div>
+
+        <div id="error-state" class="state">
+            <p>⚠️ Error al cargar los datos. Intenta nuevamente.</p>
+        </div>
+
+        <div id="empty-state" class="state">
+            <p>No se encontraron animes. Prueba con otros criterios de búsqueda.</p>
+        </div>
+
+        <div id="results-container" class="anime-grid"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
