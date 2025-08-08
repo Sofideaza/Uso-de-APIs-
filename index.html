@@ -1,44 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 1</title>
+    <title>APIs</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Anime Search</h1>
+        <h1>Explorador de APIs</h1>
+        
+        <div class="api-selector">
+            <button id="cat-btn">Dato de Gatos</button>
+            <button id="games-btn">Ofertas de juegos</button>
+            <button id="user-btn">Usuario Aleatorio</button>
+            <button id="anime-btn">Buscar Anime</button>
+        </div>
 
-        <div class="search-container">
-            <input type="text" id="anime-name" placeholder="Enter anime name">
-
+        <div id="anime-controls" class="controls">
+            <input type="text" id="anime-query" placeholder="Nombre del anime">
             <select id="anime-type">
-                <option value="all">All Types</option>
+                <option value="">Todos</option>
                 <option value="tv">TV</option>
-                <option value="movie">Movie</option>
-                <option value="ova">OVA</option>
-                <option value="special">Special</option>
+                <option value="movie">Película</option>
             </select>
-             <input type="number" id="anime-limit" placeholder="Límite (1-25)" min="1" max="25" value="10">
-            <button id="search-btn">Buscar</button>
+            <input type="number" id="anime-limit" min="1" max="25" value="10">
+            <button id="anime-search">Buscar</button>
         </div>
 
-        <div id="loading-state" class="state">
-            <div class="loader"></div>
-            <p>Cargando animes...</p>
+        <div id="results">
+            <div id="cat-result" class="result"></div>
+            <div id="games-result" class="result"></div>
+            <div id="user-result" class="result"></div>
+            <div id="anime-result" class="result"></div>
         </div>
 
-        <div id="error-state" class="state">
-            <p>⚠️ Error al cargar los datos. Intenta nuevamente.</p>
+        <div id="loading" class="state">
+            <div class="spinner"></div>
+            <p>Cargando...</p>
         </div>
-
-        <div id="empty-state" class="state">
-            <p>No se encontraron animes. Prueba con otros criterios de búsqueda.</p>
+        <div id="error" class="state">
+            <p>Error al cargar los datos</p>
         </div>
-
-        <div id="results-container" class="anime-grid"></div>
     </div>
-    <script src="index.js"></script>
+
+    <script src="apis/index.js" type="module"></script>
 </body>
 </html>
